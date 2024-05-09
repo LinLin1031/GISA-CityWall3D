@@ -34,7 +34,7 @@ If you would like to apply for this dataset, please complete the information in 
 
 CityWall3D contains about 22km of the Nanjing City Wall, as well as the environment within a range of 50m on both sides, with a total area about 3.6km², and the number of labeled point clouds is around 0.6 billion. For a better organization and reading of the point cloud, we divide the labeled point cloud into 18 blocks according to the homogeneity principle, each block covers about 346,000m².
 
-<p align="center"> <img src="imgs/1.png" width="100%"> </p>
+<p align="center"> <img src="imgs/Fig1.png" width="100%"> </p>
 <p align="center">Figure 1. Overview of the coverage area of CityWall3D dataset.</p> 
 
 ### Data Collection
@@ -47,7 +47,7 @@ The UAV photogrammetry primarily collects the ordinary sections of the city wall
 
 ### Semantic Annotations
 
-<p align="center"> <img src="imgs/2.png" width="100%"> </p>
+<p align="center"> <img src="imgs/Fig2.png" width="100%"> </p>
 <p align="center">Figure 2. Examples of our CityWall3D dataset. Different semantic classes are labeled by different colors.</p> 
 
 - **Ground** (impervious surfaces and rough terrain)
@@ -63,7 +63,7 @@ The UAV photogrammetry primarily collects the ordinary sections of the city wall
 - **Other** (remaining objects)
 
 ### Statistics
-<p align="center"> <img src="imgs/3.png" width="100%"> </p>
+<p align="center"> <img src="imgs/Fig3.png" width="100%"> </p>
 <p align="center">Figure 3. The distribution of different semantic labels in the CityWall3D dataset.</p> 
 
 ## Updates
