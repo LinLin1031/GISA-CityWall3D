@@ -1,31 +1,20 @@
-# RailPC: A Large-Scale Railway Point Cloud Semantic Segmentation Dataset
+# CityWall3D: A Large-Scale Point Cloud Dataset for Semantic Segmentation of Urban Heritage Environments
 
-This is the official repository of the **RailPC** dataset. For details, please refer to:<br />
-**RailPC: A Large-Scale Railway Point Cloud Semantic Segmentation Dataset** <br />
-Tengping Jiang, Shiwei Li, Qinyu Zhang, Guangshuai Wang, Zequn Zhang, Fankun Zeng, Peng An, Xin Jin, Shan Liu, Yongjun Wang.<br />
+This is the official repository of the **CityWall3D** dataset. For details, please refer to:<br />
+**CityWall3D: A Large-Scale Point Cloud Dataset for Semantic Segmentation of Urban Heritage Environments** <br />
+Lin Zhao, Chaodong Ma, Xin Xu, Qinyu Zhang, Tengping Jiang, Yongjun Wang.<br />
 
-
-Semantic segmentation in the context of 3D point clouds for the railway environment holds significant economic value, 
-but its development is severely hindered by the lack of suitable and specific datasets. 
-Additionally, the models trained on existing urban road point cloud datasets demonstrate poor generalization on railway data due to a large domain gap caused by non-overlapping special/rare categories, 
-e.g., rail track, track bed, etc. To harness the potential of supervised learning methods in the domain of 3D railway semantic segmentation, we introduce RailPC, 
-a new point cloud benchmark. RailPC provides a large-scale dataset with rich annotations for semantic segmentation in the railway environment. 
-Notably, RailPC contains twice the number of annotated points compared to the largest available mobile laser scanning (MLS) point cloud dataset and is the first railway-specific 3D dataset for semantic segmentation. 
-It covers a total of nearly 25 km railway in two different scenes (urban and mountain), with 3 billion points that are finely labeled as 16 most typical classes w.r.t railway, 
-and the data acquisition process is completed in China by MLS systems. Through extensive experimentation, 
-we evaluate the performance of advanced scene understanding methods on the annotated dataset and present a synthetic analysis of semantic segmentation results. 
-Based on our findings, we establish some critical challenges towards railway-scale point cloud semantic segmentation.
+## Abstract
+Fine-grained scene understanding in the context of 3D point clouds for urban heritage environment carries enormous economic values, but its development is severely limited by the lack of suitable and specific datasets. Besides, most of the work trained on existing urban point cloud datasets exhibit poor generalization on heritage data because of a large domain gap caused by non-overlapped special and rare categories, e.g., city walls and ancient buildings. To release the potential of supervised deep learning models in 3D urban heritage understanding, we present a new point cloud benchmark, dubbed CityWall3D, with large-scale richly annotated points. Specifically, CityWall3D is the first heritage-specific 3D dataset for semantic segmentation. It covers a total length of approximately 22 kilometers of the Nanjing City Wall and its surroundings, acquired by Terrestrial Laser Scanning (TLS) and Unmanned Aerial Vehicle (UAV) photogrammetry, with 0.6 billion points finely labeled into 11 classes. The experimental results indicate that CityWall3D effectively represents real urban heritage environments, and poses challenges in terms of cross domain, class imbalance and density inhomogeneity of point clouds.
 
 ## Demo
 
 
-https://github.com/NNU-GISA/GISA-RailPC/assets/40690061/5b60a97f-2205-40ea-9d05-afb30e70efcc
-
 
 ## Download
-If you would like to apply for this dataset, please complete the information in the following format and email it to 211345003@njnu.edu.cn or 221302177@njnu.edu.cn. We'll get right back to you. <br />
+If you would like to apply for this dataset, please complete the information in the following format and email it to 221302150@njnu.edu.cn or 231312003@njnu.edu.cn. We'll get right back to you. <br />
   
-	Subject: Request for RailPC dataset 
+	Subject: Request for CityWall3D dataset 
  
     ******** Basic information ********
     · Name:
@@ -38,72 +27,53 @@ If you would like to apply for this dataset, please complete the information in 
     · How do you plan to use the dataset? (e.g. academic research, business analysis, curriculum projects, etc.):
     · Would you be willing to cite or refer to this dataset and its sources in your research results:
     · Your suggestions for this dataset(Optional):
-    
+
 ## Dataset
 
 ### Overview
 
-The proposed benchmark called the RailPC dataset, it comprises over 2 billion 3D points collected from two different environments (i.e., urban and mountain railway scenes). 
-The urban railway was captured a section of Nanjing, China, covering length of around 10 km. As for data of mountain railway environments, 
-the data were collected in the rural railway yard area of Chengdu. The mountain railway point cloud covers road length of approximately 15 km, which is located in the relative high altitude regions.
+CityWall3D contains about 22km of the Nanjing City Wall, as well as the environment within a range of 50m on both sides, with a total area about 3.6km², and the number of labeled point clouds is around 0.6 billion. For a better organization and reading of the point cloud, we divide the labeled point cloud into 18 blocks according to the homogeneity principle, each block covers about 346,000m².
 
 <p align="center"> <img src="imgs/1.png" width="100%"> </p>
-<p align="center">Figure 1. Overview of the coverage area of RailPC dataset.</p> 
+<p align="center">Figure 1. Overview of the coverage area of CityWall3D dataset.</p> 
 
 ### Data Collection
 
-The MLS system is equipped with a HiScan-C scanning sensor with 360° field of view, 
-structured light module, a real-time kinematic (RTK) global navigation satellite system (GNSS), 
-an embedded computer and a power supply system. The detection range of the installed laser sensor is 0.5 m – 119 m, 
-ensuring the accuracy of about 2 mm and generating 1,000,000 points per second. 
-The root mean square accuracy is about 0.04 m in a vertical direction, 0.02 m in the horizontal direction, 
-0.015◦ in the heading direction, and 0.008◦ in pitch and roll directions. 
+To effectively represent the real urban heritage environment, we captured the nearly intact ontology of the Nanjing City Wall heritage environment. Due to the complicated appearance of the city wall and the existence of scanning blind zones, CityWall3D is acquired by a combination of TLS and UAV photogrammetry.
+
+The TLS acquisition mainly concerns the critical sections of the city wall, such as Hanzhong Gate, Dongshuiguan, and Shence Gate, especially their unique battlement and merlon construction, which are of immense heritage value. More specifically, we utilized a RIEGL VZ-400i scanning system equipped with a Nikon D810 SLR digital camera.
+
+The UAV photogrammetry primarily collects the ordinary sections of the city wall as well as the surroundings, which make up the majority of the dataset. We adopted the DJI Phantom 4 RTK UAV carrying a camera with 20 million effective pixels. During the flight, the UAV was kept at a height of about 100m over the city wall and flew along a curved trajectory. At the same time, the camera maintained a vertical shooting mode and took color images according to a certain overlap (about 70% in the heading direction and 60% in the side direction).
 
 ### Semantic Annotations
 
 <p align="center"> <img src="imgs/2.png" width="100%"> </p>
-<p align="center">Figure 2. Examples of our RailPC dataset. Different semantic classes are labeled by different colors.</p> 
+<p align="center">Figure 2. Examples of our CityWall3D dataset. Different semantic classes are labeled by different colors.</p> 
 
-- **Rail track**
-- **Track bed** (sleeper and ballast)
-- **Ground**(impervious surfaces and rough terrain)
-- **Roadside**
-- **Catenary** (transmission and distribution lines)
-- **Pull wire**
-- **Guardrail** (fences and railway barriers)
-- **Vegetation** (trees and grass)
-- **Support** (bearing cable and positioning tube)
+- **Ground** (impervious surfaces and rough terrain)
+- **lnterchange** (elevated interchange and cloverleaf interchange)
+- **City Wall** (heritage city walls)
+- **Modern Building** (residential, high-rises, and warehouses)
+- **Ancient Building** (ancient style heritage buildings)
+- **Vegetation** (trees, shrubs, hedges, and bushes)
+- **Car** (cars, trucks, and buses)
 - **Pole** (power line poles and light poles)
-- **Transmission tower**
-- **Stair**
-- **Tunnel**
-- **Building** (residential, high-rises, and warehouses)
-- **Concrete**
+- **Lantern** (ancient style lights on the city wall)
+- **Water** (rivers and water canals)
 - **Other** (remaining objects)
-- **Noisy points** (can be deleted)
 
 ### Statistics
 <p align="center"> <img src="imgs/3.png" width="100%"> </p>
-<p align="center">Figure 3. The distribution of different semantic categories in the RailPC dataset.</p> 
-
+<p align="center">Figure 3. The distribution of different semantic labels in the CityWall3D dataset.</p> 
 
 ## Updates
-* 2024/04/23: The dataset is available for download!
-* 2024/04/18: Initial release!
-* 2024/03/13: The RailPC has been accepted by CAAI!
 
-## To do
-- [x] Mountain railway scene semantic segmentation dataset！
-- [x] Urban railway scene semantic segmentation dataset！
-- [ ] Railway scene instance segmentation dataset！
-- [ ] Railway scene panoptic segmentation dataset！
 
 ## Related Repos
-1. [SPGraph:Large-scale Point Cloud Semantic Segmentation with Superpoint Graphs](https://github.com/loicland/superpoint_graph)![GitHub stars](https://img.shields.io/github/stars/loicland/superpoint_graph.svg?style=flat&label=Star)
-2. [KPConv: Flexible and deformable convolution for point clouds](https://github.com/HuguesTHOMAS/KPConv)![GitHub stars](https://img.shields.io/github/stars/HuguesTHOMAS/KPConv.svg?style=flat&label=Star)
-3. [RandLA-Net: Efficient Semantic Segmentation of Large-Scale Point Clouds](https://github.com/QingyongHu/RandLA-Net) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/RandLA-Net.svg?style=flat&label=Star)
-4. [SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds](https://github.com/QingyongHu/SQN) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SQN.svg?style=flat&label=Star)
-5. [Tangent Convolutions for Dense Prediction in 3D](https://github.com/tatarchm/tangent_conv)![GitHub stars](https://img.shields.io/github/stars/tatarchm/tangent_conv.svg?style=flat&label=Star)
-6. [MS-RRFSegNet: Multi-Scale Regional Relation Feature Segmentation Network for Semantic Segmentation of Urban Scene Point Clouds](https://github.com/Megasister/MS_RRFSegNet)![GitHub stars](https://img.shields.io/github/stars/Megasister/MS_RRFSegNet.svg?style=flat&label=Star)
-7. [Supervoxel convolution for online 3D semantic segmentation](https://github.com/shishenghuang/SVNet_jittor)![GitHub stars](https://img.shields.io/github/stars/shishenghuang/SVNet_jittor.svg?style=flat&label=Star)
- 
+1. [KPConv: Flexible and deformable convolution for point clouds](https://github.com/HuguesTHOMAS/KPConv) ![GitHub stars](https://img.shields.io/github/stars/HuguesTHOMAS/KPConv.svg?style=flat&label=Star)
+2. [RandLA-Net: Efficient Semantic Segmentation of Large-Scale Point Clouds](https://github.com/QingyongHu/RandLA-Net) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/RandLA-Net.svg?style=flat&label=Star)
+3. [SCF-Net: Learning Spatial Contextual Features for Large-Scale Point Cloud Segmentation](https://github.com/leofansq/SCF-Net) ![Github stars](https://img.shields.io/github/stars/leofansq/SCF-Net.svg?style=flat&label=Star)
+4. [Push-the-Boundary: Boundary-aware Feature Propogation for Semantic Segmentation of 3D Point Clouds](https://github.com/shenglandu/PushBoundary) ![Github stars](https://img.shields.io/github/stars/shenglandu/PushBoundary.svg?style=flat&label=Star)
+5. [SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds](https://github.com/QingyongHu/SQN) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SQN.svg?style=flat&label=Star)
+6. [All Points Matter: Entropy-Regularized Distribution Alignment for Weakly-supervised 3D Segmentation](https://github.com/LiyaoTang/ERDA) ![Github stars](https://img.shields.io/github/stars/LiyaoTang/ERDA.svg?style=flat&label=Star)
+7. [PointCT: Point Central Transformer Network for Weakly-supervised Point Cloud Semantic Segmentation](https://github.com/anhthuan1999/PointCT) ![Github stars](https://img.shields.io/github/stars/anhthuan1999/PointCT.svg?style=flat&label=Star)
