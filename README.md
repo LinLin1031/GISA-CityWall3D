@@ -1,11 +1,11 @@
-# CityWall3D: A Large-Scale Point Cloud Dataset for Semantic Segmentation of Urban Heritage Environments
+# CityWall3D: A Large-Scale UAV Point Cloud Dataset for Semantic Segmentation of *Ming City Wall*
 
 This is the official repository of the **CityWall3D** dataset. For details, please refer to:<br />
-**CityWall3D: A Large-Scale Point Cloud Dataset for Semantic Segmentation of Urban Heritage Environments** <br />
+**CityWall3D: A Large-Scale UAV Point Cloud Dataset for Semantic Segmentation of *Ming City Wall*** <br />
 Lin Zhao, Chaodong Ma, Xin Xu, Qinyu Zhang, Tengping Jiang, Yongjun Wang.<br />
 
 ## Abstract
-Fine-grained scene understanding in the context of 3D point clouds for urban heritage environment carries enormous economic values, but its development is severely limited by the lack of suitable and specific datasets. Besides, most of the work trained on existing urban point cloud datasets exhibit poor generalization on heritage data because of a large domain gap caused by non-overlapped special and rare categories, e.g., city walls and ancient buildings. To release the potential of supervised deep learning models in 3D urban heritage understanding, we present a new point cloud benchmark, dubbed CityWall3D, with large-scale richly annotated points. Specifically, CityWall3D is the first heritage-specific 3D dataset for semantic segmentation. It covers a total length of approximately 22 kilometers of the Nanjing City Wall and its surroundings, acquired by Terrestrial Laser Scanning (TLS) and Unmanned Aerial Vehicle (UAV) photogrammetry, with 0.6 billion points finely labeled into 11 classes. The experimental results indicate that CityWall3D effectively represents real urban heritage environments, and poses challenges in terms of cross domain, class imbalance and density inhomogeneity of point clouds.
+Fine-grained scene understanding in the context of 3D point clouds for urban heritage environment carries enormous economic values, but its development is severely limited by the lack of suitable and specific datasets. Besides, most of the work trained on existing urban point cloud datasets exhibit poor generalization on heritage data because of a large domain gap caused by non-overlapped special and rare categories, e.g., city walls and ancient buildings. To release the potential of supervised deep learning models in 3D urban heritage understanding, we present a new point cloud benchmark, dubbed CityWall3D, with large-scale richly annotated points. Specifically, CityWall3D is the first heritage-specific 3D dataset for semantic segmentation. It covers a total length of approximately 22 kilometers of Ming City Wall and its surroundings, acquired by Unmanned Aerial Vehicle (UAV) photogrammetry, with 0.6 billion points finely labeled into 11 classes. The experimental results indicate that CityWall3D effectively represents real urban heritage environments, and poses challenges in terms of cross domain, class imbalance and density inhomogeneity of point clouds.
 
 ## Demo
 
@@ -32,23 +32,19 @@ If you would like to apply for this dataset, please complete the information in 
 
 ### Overview
 
-CityWall3D contains about 22km of the Nanjing City Wall, as well as the environment within a range of 50m on both sides, with a total area about 3.6km², and the number of labeled point clouds is around 0.6 billion. For a better organization and reading of the point cloud, we divide the labeled point cloud into 18 blocks according to the homogeneity principle, each block covers about 346,000m².
+CityWall3D contains about 22 km of Ming City Wall, as well as the surroundings within a range of 50 meters on both sides, with a total area about 3.6 km², and the number of labeled point clouds is around 0.6 billion. 
 
 <p align="center"> <img src="imgs/1.jpg" width="100%"> </p>
-<p align="center">Figure 1. Overview of the coverage area of CityWall3D dataset.</p> 
+<p align="center">Figure 1. Overview of the coverage area of CityWall3D.</p> 
 
 ### Data Collection
 
-To effectively represent the real urban heritage environment, we captured the nearly intact ontology of the Nanjing City Wall heritage environment. Due to the complicated appearance of the city wall and the existence of scanning blind zones, CityWall3D is acquired by a combination of TLS and UAV photogrammetry.
-
-The TLS acquisition mainly concerns the critical sections of the city wall, such as Hanzhong Gate, Dongshuiguan, and Shence Gate, especially their unique battlement and merlon construction, which are of immense heritage value. More specifically, we utilized a RIEGL VZ-400i scanning system equipped with a Nikon D810 SLR digital camera.
-
-The UAV photogrammetry primarily collects the ordinary sections of the city wall as well as the surroundings, which make up the majority of the dataset. We adopted the DJI Phantom 4 RTK UAV carrying a camera with 20 million effective pixels. During the flight, the UAV was kept at a height of about 100m over the city wall and flew along a curved trajectory. At the same time, the camera maintained a vertical shooting mode and took color images according to a certain overlap (about 70% in the heading direction and 60% in the side direction).
+To effectively represent the real urban heritage environment, we captured the nearly intact ontology of Ming City Wall heritage environment. Due to the complicated appearance of the city wall and the existence of scanning blind zones, CityWall3D was acquired by UAV photogrammetry. Specifically, we adopted the DJI Phantom 4 RTK UAV carrying a camera with 20 million effective pixels. During the flight, the UAV was kept at a height of about 100m over the city wall and flew along a curved trajectory. At the same time, the camera maintained a vertical shooting mode and took color images according to a certain overlap (about 70% in the heading direction and 60% in the side direction). Next, we estimated the pose and position of the camera at each viewpoint by analyzing the feature point matches between images, and generated a point cloud model by converting the feature points to 3D points.
 
 ### Semantic Annotations
 
 <p align="center"> <img src="imgs/2.jpg" width="100%"> </p>
-<p align="center">Figure 2. Examples of our CityWall3D dataset. Different semantic classes are labeled by different colors.</p> 
+<p align="center">Figure 2. Examples of CityWall3D, and different semantic classes are labeled by different colors.</p> 
 
 - **Ground** (impervious surfaces and rough terrain)
 - **lnterchange** (elevated interchange and cloverleaf interchange)
