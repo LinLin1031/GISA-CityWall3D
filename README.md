@@ -2,7 +2,7 @@
 
 This is the official repository of the **CityWall3D** dataset. For details, please refer to:<br />
 **CityWall3D: A Large-Scale UAV Point Cloud Dataset for Semantic Segmentation of *Ming City Wall*** <br />
-Lin Zhao, Chaodong Ma, Xin Xu, Qinyu Zhang, Tengping Jiang, Yongjun Wang.<br />
+Lin Zhao, Chaodong Ma, Xin Xu, Zequn Zhang, Nanxi Jin, Zihao Huang, Shan Liu, Qinyu Zhang, Tengping Jiang, Yongjun Wang<br />
 
 ## Abstract
 Fine-grained scene understanding in the context of 3D point clouds for urban heritage environment carries enormous economic values, but its development is severely limited by the lack of suitable and specific datasets. Besides, most of the work trained on existing urban point cloud datasets exhibit poor generalization on heritage data because of a large domain gap caused by non-overlapped special and rare categories, e.g., city walls and ancient buildings. To release the potential of supervised deep learning models in 3D urban heritage understanding, we present a new point cloud benchmark, dubbed CityWall3D, with large-scale richly annotated points. Specifically, CityWall3D is the first heritage-specific 3D dataset for semantic segmentation. It covers a total length of approximately 22 kilometers of Ming City Wall and its surroundings, acquired by Unmanned Aerial Vehicle (UAV) photogrammetry, with 0.6 billion points finely labeled into 11 classes. The experimental results indicate that CityWall3D effectively represents real urban heritage environments, and poses challenges in terms of cross domain, class imbalance and density inhomogeneity of point clouds.
