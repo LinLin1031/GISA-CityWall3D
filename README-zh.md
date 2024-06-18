@@ -1,11 +1,11 @@
-# CityWall3D：用于城市遗产环境语义分割的大规模点云数据集
+# CityWall3D：用于明城墙语义分割的大规模无人机点云数据集
 
 这是**CityWall3D**数据集的官方库。详情请参考:<br />
-**CityWall3D: A Large-Scale Point Cloud Dataset for Semantic Segmentation of Urban Heritage Environments** <br />
-Tengping Jiang, Shiwei Li, Qinyu Zhang, Guangshuai Wang, Zequn Zhang, Fankun Zeng, Peng An, Xin Jin, Shan Liu, Yongjun Wang.<br />
+**CityWall3D: A Large-Scale UAV Point Cloud Dataset for Se-mantic Segmentation of *Ming City Wall*** <br />
+Lin Zhao, Chaodong Ma, Xin Xu, Zequn Zhang, Nanxi Jin, Zihao Huang, Shan Liu, Qinyu Zhang, Tengping Jiang, Yongjun Wang<br />
 
 
-城市遗产环境三维点云背景下的细粒度场景理解具有巨大的经济价值，但由于缺乏合适的特定数据集，其发展受到严重限制。此外，大多数在现有城市点云数据集上训练的工作对遗产数据的泛化能力较差，因为不重叠的特殊和罕见类别（如城墙和古建筑）造成了很大的领域差距。为了发挥监督深度学习模型在3D城市遗产理解中的潜力，本文提出了一种新的具有大规模丰富的注释点的点云基准，称为CityWall3D。具体而言，CityWall3D是第一个用于语义分割的特定于遗产的3D数据集。它通过地面激光扫描（TLS）和无人机（UAV）摄影测量获取，覆盖了南京城墙及全长约22公里的周边区域，其6亿个点被精细标记为11类。实验结果表明，CityWall3D有效地代表了真实的城市遗产环境，并在点云的跨域、类不平衡和密度不均匀性方面提出了挑战。
+城市遗产环境三维点云的精细场景理解具有巨大的经济价值，但由于缺乏合适的特定数据集，其发展受到严重限制。此外，大多数在现有城市点云数据集上训练的工作在遗产数据上的泛化效果不佳，原因是城墙和古建筑等非重叠的特殊和稀有类别造成了巨大的领域差距。为了释放有监督深度学习模型在三维城市遗产理解中的潜力，我们提出了一个新的点云基准，称为 CityWall3D，其中包含大规模的丰富注释点。具体来说，CityWall3D 是首个用于语义分割的特定遗产三维数据集。该数据集涵盖总长约 22 公里的明城墙及其周边地区，由无人机（UAV）摄影测量获得，其中有 6 亿个点被精细标注为 11 个类别。实验结果表明，CityWall3D 有效地再现了真实的城市遗产环境，并在点云的跨域、类不平衡和密度不均匀性方面提出了挑战。
 
 ## 样例
 
@@ -31,19 +31,19 @@ Tengping Jiang, Shiwei Li, Qinyu Zhang, Guangshuai Wang, Zequn Zhang, Fankun Zen
 
 ### 总览
 
-CityWall3D 包含约22公里的南京城墙，以及两侧50米范围内的周边区域，总面积约3.6平方公里，标记点云数量约6亿。为了更好地组织和读取点云，我们根据同质性原理将标记的点云划分为18个区块，每个区块占地约346000m²。
+CityWall3D 包含约 22 公里的明城墙以及两侧 50 米范围内的周边环境，总面积约为 3.6 平方公里，标注点云数量约为 6 亿个。
 
-<p align="center"> <img src="imgs/Fig1.png" width="100%"> </p>
-<p align="center">图 1. CityWall3D 数据集覆盖区域概览。</p> 
+<p align="center"> <img src="imgs/1.jpg" width="100%"> </p>
+<p align="center">图 1. CityWall3D 覆盖区域概览。</p> 
 
 ### 数据收集
 
-为了有效地表现真实的城市遗产环境，我们采集了几乎完整的南京城墙遗产环境本体。由于城墙外观复杂，且存在扫描盲区，因此采用TLS和无人机摄影测量相结合的方法进行采集。TLS的采集主要涉及汉中门、东水关、神策门等城墙的重点段，尤其是其独特的女嫱和雉堞建筑，具有巨大的遗产价值。更具体地说，我们使用了配备尼康D810单反数码相机的RIEGL VZ-400i扫描系统。无人机摄影测量主要收集城墙的普通段以及周边区域，它们构成了数据集的大部分。我们采用了DJI Phantom 4 RTK无人机，该无人机搭载了2000万有效像素的摄像头。在飞行过程中，无人机保持在城墙上方约100米的高度，并沿着弯曲的轨迹飞行。同时，相机保持垂直拍摄模式，并根据一定的重叠（航向方向约70%，旁向方向约60%）拍摄彩色图像。
+为了有效表现真实的城市遗产环境，我们捕捉了几乎完整的明城墙遗产环境本体。由于城墙外形复杂且存在扫描盲区，CityWall3D 采用了无人机摄影测量的方式获取。具体来说，我们采用大疆 Phantom 4 RTK 无人机，搭载 2000 万有效像素的相机。在飞行过程中，无人机保持在城墙上空约 100 米的高度沿曲线轨迹飞行。同时，摄像机保持垂直拍摄模式，并按照一定的重叠率（航向约 70%，侧向约 60%）拍摄彩色图像。接下来，我们通过分析图像之间的特征点匹配情况来估计摄像机在每个视点的姿势和位置，并通过将特征点转换为三维点来生成点云模型。
 
 ### 语义标注
 
-<p align="center"> <img src="imgs/Fig2.png" width="100%"> </p>
-<p align="center">图 2. CityWall3D 数据集示例。不同的语义类别用不同的颜色标注。</p> 
+<p align="center"> <img src="imgs/2.jpg" width="100%"> </p>
+<p align="center">图 2. CityWall3D 示例，不同的语义类别用不同的颜色标注。</p> 
 
 - **地面**（不透水表面和崎岖地形）
 - **立交桥**（高架立交和三叶立交）
@@ -58,8 +58,8 @@ CityWall3D 包含约22公里的南京城墙，以及两侧50米范围内的周�
 - **其他**（剩余对象）
 
 ### 数据统计
-<p align="center"> <img src="imgs/Fig3.png" width="50%"> </p>
-<p align="center">图 3. CityWall3D 数据集中不同语义类别的分布情况。</p> 
+<p align="center"> <img src="imgs/3.jpg" width="50%"> </p>
+<p align="center">图 3. CityWall3D 中不同语义类别的分布情况。</p> 
 
 
 ## 更新日历
